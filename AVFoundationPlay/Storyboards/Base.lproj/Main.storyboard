@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="KHn-3x-cSb">
             <objects>
-                <viewController id="8wo-jo-Bfo" sceneMemberID="viewController">
+                <viewController id="8wo-jo-Bfo" customClass="LoginViewController" customModule="AVFoundationPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Kl-03-8jz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,12 +44,18 @@
                                         <color key="backgroundColor" red="0.93575771238234018" green="1" blue="0.70000968957553211" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="8wo-jo-Bfo" eventType="touchUpInside" id="jVE-eE-arj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQc-xl-NZo">
                                         <rect key="frame" x="0.0" y="46" width="187.5" height="30"/>
                                         <color key="backgroundColor" red="0.17751403560303192" green="0.42528049819862701" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="8wo-jo-Bfo" eventType="touchUpInside" id="dz0-or-ehJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -65,15 +71,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fnp-Gq-9Wk"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="sEx-8a-035" id="aDu-is-m8A"/>
+                        <outlet property="passwordTextField" destination="A0r-PF-k77" id="nIr-dM-2ho"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jr4-l6-4ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="636" y="275"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo List View Controller-->
         <scene sceneID="MZr-1U-9s6">
             <objects>
-                <viewController id="NVn-Fd-ald" sceneMemberID="viewController">
+                <viewController id="NVn-Fd-ald" customClass="PhotoListViewController" customModule="AVFoundationPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xmk-Wv-gDt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +92,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="OzD-do-ScH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="editedPhotoCell" rowHeight="160" id="OzD-do-ScH" customClass="EditedPhotoTableViewCell" customModule="AVFoundationPlay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OzD-do-ScH" id="Fgx-RK-ae0">
@@ -93,17 +103,11 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pZa-IX-Fcz">
-                                                    <rect key="frame" x="16" y="16" width="343" height="68.5"/>
+                                                    <rect key="frame" x="16" y="16" width="343" height="29"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rJ-F2-wga">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZe-rT-FTU">
-                                                            <rect key="frame" x="0.0" y="47" width="343" height="21.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -120,6 +124,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="dhv-Sj-epx" secondAttribute="trailing" id="svA-5X-iVM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="QZe-rT-FTU" id="Eod-Rw-UQM"/>
+                                            <outlet property="editedPhotoImageView" destination="dhv-Sj-epx" id="vUA-O9-6ch"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -129,6 +137,9 @@
                                     <constraint firstAttribute="width" secondItem="6au-BV-qat" secondAttribute="height" multiplier="1:1" id="77L-rL-V6G"/>
                                 </constraints>
                                 <state key="normal" image="newImageButton"/>
+                                <connections>
+                                    <action selector="newPhotoButtonTapped:" destination="NVn-Fd-ald" eventType="touchUpInside" id="v6R-If-8qp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -143,15 +154,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vhf-so-Zd8"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="lag-pB-zLF" id="qN4-9H-O4r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U14-OS-rGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-158" y="1075"/>
         </scene>
-        <!--View Controller-->
+        <!--Capture View Controller-->
         <scene sceneID="bCZ-fo-Vxu">
             <objects>
-                <viewController id="aog-dA-aLQ" sceneMemberID="viewController">
+                <viewController id="aog-dA-aLQ" customClass="CaptureViewController" customModule="AVFoundationPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pqJ-yN-kOa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,6 +182,9 @@
                                             <constraint firstAttribute="width" secondItem="QpG-lq-tqf" secondAttribute="height" multiplier="50:82" id="88G-nJ-gD5"/>
                                         </constraints>
                                         <state key="normal" image="plusButton"/>
+                                        <connections>
+                                            <action selector="zoomInButtonTapped:" destination="aog-dA-aLQ" eventType="touchUpInside" id="HeV-iG-EQl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypm-Nb-y8y">
                                         <rect key="frame" x="0.0" y="69.5" width="37.5" height="61.5"/>
@@ -175,6 +192,9 @@
                                             <constraint firstAttribute="width" secondItem="ypm-Nb-y8y" secondAttribute="height" multiplier="50:82" id="uaP-bF-j4p"/>
                                         </constraints>
                                         <state key="normal" image="minusButton"/>
+                                        <connections>
+                                            <action selector="zoomOutButtonTapped:" destination="aog-dA-aLQ" eventType="touchUpInside" id="12H-ri-qjb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -184,6 +204,9 @@
                                     <constraint firstAttribute="width" secondItem="AzI-hu-m0v" secondAttribute="height" multiplier="1:1" id="95F-y0-neV"/>
                                 </constraints>
                                 <state key="normal" image="captureButton"/>
+                                <connections>
+                                    <action selector="capturePhotoButtonTapped:" destination="aog-dA-aLQ" eventType="touchUpInside" id="BJQ-sV-zeP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,6 +227,7 @@
                     <navigationItem key="navigationItem" id="A06-ua-90f"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="cameraCaptureImageView" destination="NdM-Xu-hhN" id="nt5-dJ-19D"/>
                         <segue destination="qSb-KV-HaV" kind="show" id="PMm-mr-xYw"/>
                     </connections>
                 </viewController>
@@ -211,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="1838" y="1075"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Edit View Controller-->
         <scene sceneID="T0R-AF-sBq">
             <objects>
-                <viewController id="qSb-KV-HaV" sceneMemberID="viewController">
+                <viewController id="qSb-KV-HaV" customClass="PhotoEditViewController" customModule="AVFoundationPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ygk-fV-3JY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -232,13 +256,27 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TKd-l2-bKP">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filteredPhotoCell" id="TKd-l2-bKP" customClass="FilteredPhotoCollectionViewCell" customModule="AVFoundationPlay" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="140" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z2y-IG-wJG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Z2y-IG-wJG" secondAttribute="trailing" id="DwQ-8F-caY"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z2y-IG-wJG" secondAttribute="bottom" id="SUi-nf-m4v"/>
+                                            <constraint firstItem="Z2y-IG-wJG" firstAttribute="top" secondItem="TKd-l2-bKP" secondAttribute="top" id="erY-4y-SA7"/>
+                                            <constraint firstItem="Z2y-IG-wJG" firstAttribute="leading" secondItem="TKd-l2-bKP" secondAttribute="leading" id="qfX-eJ-cij"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="filteredPhotoImageView" destination="Z2y-IG-wJG" id="7f5-ph-0wa"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -263,6 +301,10 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="9hJ-7N-LL8"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Jgc-1m-cuL" id="0NZ-XL-1t0"/>
+                        <outlet property="editedPhotoImageView" destination="30b-qR-4I0" id="oQ0-5F-KGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spg-to-ATk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
