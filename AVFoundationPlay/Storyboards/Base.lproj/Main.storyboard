@@ -123,12 +123,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6au-BV-qat">
+                                <rect key="frame" x="276" y="568" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6au-BV-qat" secondAttribute="height" multiplier="1:1" id="77L-rL-V6G"/>
+                                </constraints>
+                                <state key="normal" image="newImageButton"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lag-pB-zLF" firstAttribute="top" secondItem="Xmk-Wv-gDt" secondAttribute="top" id="Ihf-4L-mPE"/>
                             <constraint firstItem="lag-pB-zLF" firstAttribute="trailing" secondItem="Vhf-so-Zd8" secondAttribute="trailing" id="Iwr-2k-sHO"/>
+                            <constraint firstItem="6au-BV-qat" firstAttribute="width" secondItem="Xmk-Wv-gDt" secondAttribute="width" multiplier="0.2" id="U04-ZM-XS7"/>
+                            <constraint firstItem="6au-BV-qat" firstAttribute="trailing" secondItem="Vhf-so-Zd8" secondAttribute="trailing" constant="-24" id="dph-mT-BZD"/>
                             <constraint firstItem="lag-pB-zLF" firstAttribute="bottom" secondItem="Vhf-so-Zd8" secondAttribute="bottom" id="eUo-WT-nMU"/>
+                            <constraint firstItem="Vhf-so-Zd8" firstAttribute="bottom" secondItem="6au-BV-qat" secondAttribute="bottom" constant="24" id="n2w-JP-i3a"/>
                             <constraint firstItem="lag-pB-zLF" firstAttribute="leading" secondItem="Vhf-so-Zd8" secondAttribute="leading" id="utn-hm-Ar0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vhf-so-Zd8"/>
@@ -280,6 +290,7 @@
     <resources>
         <image name="captureButton" width="140" height="140"/>
         <image name="minusButton" width="50" height="82"/>
+        <image name="newImageButton" width="140" height="140"/>
         <image name="plusButton" width="50" height="82"/>
     </resources>
 </document>
